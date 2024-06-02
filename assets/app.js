@@ -1,22 +1,17 @@
-// var swiper = new Swiper(".mySwiper", {
-//     watchSlidesProgress: true,
-//     slidesPerView: 3,
-//   });
-
-// $('.humburger > img').click(() => {
-//     $(".tp-header-2").toggleClass('showbar');
-// });
-// $('.closebtn > img').click(() => {
-//     $(".tp-header-2").removeClass('showbar');
-// });
 
 
-$('.humburger-1 > img').click(() => {
+$('.humburger-1 > img ,.closebtn > img').click(() => {
     $(".nav_links").toggleClass('showbar');
 });
-$('.closebtn > img').click(() => {
-    $(".nav_links").removeClass('showbar');
+
+
+$("span.menu_plus").click(function() {
+    let parent = $(this).parent();
+    parent.siblings().find('ul').slideUp();
+    $(this).siblings("ul").slideToggle();
 });
+
+
 
 
 

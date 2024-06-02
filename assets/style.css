@@ -61,7 +61,7 @@ body{
     color: #61605e;
     /* padding-left: 8px; */
 }
-.nav_links ul li a {
+.nav_links > ul > li > a {
     padding: 30px 16px;
 }
 
@@ -107,7 +107,9 @@ li.has-menu:hover .sub-menu {
 .humburger-1{
     display: none;
 }
-
+.nav_links > span{
+    display: none;
+}
 
 .nav_links > ul {
     display: flex;
@@ -155,7 +157,7 @@ nav.navbar.navbar-expand-lg {
     color: #8b9e9e;
 }
 .navbar-text-1 img{
-    height: 25px;
+    height: 18px;
     width: 18px;
 }
 
@@ -773,30 +775,26 @@ visibility: hidden;
     width: 100%;
 }
 
-.main_banner_1
-{
+.main_banner_1{
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     color: #fff;
-    position: relative;
     margin-top: 0px;
 }
 .tp_main_section{
 padding: 50px 0;
 }
 .tp_inner_context{
-    width: 35%;
-    position: absolute;
     padding-left: 100px;
 }
 .tp_section_title {
     color: #fe7f4c;
-   position: absolute;
-   font-family: "Monrope", sans-serif;
-   font-weight: 650;
-   font-size: 14px;
+    font-family: "Monrope", sans-serif;
+    font-weight: 650;
+    font-size: 14px;
+    position: relative;
 }
 
 .tp_section_title::before{
@@ -823,28 +821,22 @@ padding: 50px 0;
 .tp_section_heading{
     font-family: "Monrope", sans-serif;
     color: #363636;
-    position: absolute;
-    top: 30px;
 }
-.tp_section_heading> h2{
+.tp_section_heading> h2 {
     font-weight: 700;
     font-size: 40px;
+    padding: 20px 0;
 }
-.tp_section_pera{
-    font-family: "Monrope", sans-serif;
-    position: absolute;
+.tp_section_pera {
     color: #61605e;
-    top: 160px;
     line-height: 28px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-}
-.tp_section_btn{
-    position: absolute;
-    top: 270px;
+    padding-right: 70px;
 }
 .card_4{
     position: relative;
+    margin-left: 10px;
 }
 .card_4::after {
     content: "";
@@ -1074,6 +1066,7 @@ color: #61605e;
     align-items: center;
     flex-direction: column;
     padding: 5rem 0;
+    text-align: center;
 }
 .banner-text{
     font-size: 15px;
@@ -3591,7 +3584,9 @@ textarea.text-aria {
     flex-wrap: wrap;
     gap: 20px;
 }
-
+span.menu_plus{
+    display: none;
+}
 /*     Contact page end */
 
 
@@ -3729,27 +3724,39 @@ padding: 18px 30px;
     .providing-bg::before {
         width: 100%;
     }
-
-
-    .humburger-1{
+    .nav_links > span {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 50px;
+        width: 50px;
+        background-color: #fff;
         display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .humburger-1{
+        display: block;
     }
 .nav_links {
         position: fixed;
-        background: #fe7f4c;
+        background: #000;
         height: 100%;
         width: 50%;
-        left: 0;
+        right: 0;
         top: 0;
         z-index: 99999;
         opacity: 0;
         visibility: hidden;
         transition: all 0.5s;
+        overflow-y: auto;
     }
 .nav_links > ul{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 4rem;
 }
 .nav_links.showbar {
     opacity: 1;
@@ -3845,6 +3852,46 @@ form.checkout-form {
 .tp_section_heading> h2 {
     font-weight: 700;
     font-size: 35px;
+}
+    ul.sub-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    max-height: 250px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    background: #fff;
+    display: none;
+    transition: inherit;
+}
+
+ul.sub-menu > li > a {
+    color: #000;
+    font-size: 1rem;
+}
+
+ul.sub-menu li {
+    width: 100%;
+}
+
+li.has-menu {
+    width: 300px;
+    max-width: 100%;
+}
+
+li.has-menu > a {
+    padding-left: 0 !important;
+}
+span.menu_plus {
+    display: block;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    cursor: pointer;
 }
 }
 @media screen and ( max-width: 767px) {
@@ -3945,6 +3992,17 @@ form.checkout-form {
         padding: 1.04rem 1rem;
       
     }
+    .second-text {
+        font-size: 14px;
+    }
+    .About_head {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .clr-1 {
+        font-size: 12px;
+        
+    }
     .about-border {
         left: 0;
     }
@@ -3990,6 +4048,9 @@ form.checkout-form {
     }
     .sidebar-peragraph {
         padding-right: 0;
+    }
+    .nav_links {
+        width: 100%;
     }
 }
 @media screen and ( max-width: 420px) {
